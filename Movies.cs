@@ -1,25 +1,27 @@
-
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-
-class Movies
+namespace Movies
 {
-    public string MovieTitle { get; set; }
-    public string MovieCategory { get; set; }
-
-    
-    public Movies(string movieTitle, string movieCategory)
+    public class Movie
     {
-        MovieTitle = movieTitle;
-        MovieCategory = movieCategory;
+        private string MovieTitle;
+        private string MovieCategory;
 
+        public Movie(string movieTitle, string movieCategory)
+        {
+            MovieTitle1 = movieTitle;
+            MovieCategory1 = movieCategory;
+        }
+
+        public string MovieTitle1 { get => MovieTitle; set => MovieTitle = value; }
+        public string MovieCategory1 { get => MovieCategory; set => MovieCategory = value; }
+
+        public override string ToString()
+        {
+            return $"{MovieTitle1}";
+        }
     }
-    
-    public override string ToString()
-    {
-        return $"{MovieTitle}";
-    }
-    
 }
+
