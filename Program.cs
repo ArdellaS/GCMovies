@@ -12,25 +12,21 @@ namespace Movies
             do
             {
 
-                List<Movies> flicks = new List<Movies>();
-                flicks.Add(new Movies("Silent Hill", "horror"));
-                flicks.Add(new Movies("Hellraiser", "horror"));
-                flicks.Add(new Movies("All About the Benjamins", "comedy"));
-                flicks.Add(new Movies("Money Talks", "comedy"));
-                flicks.Add(new Movies("True Lies", "action"));
-                flicks.Add(new Movies("The Mummy", "action"));
-                flicks.Add(new Movies("Homeward Boud", "family"));
-                flicks.Add(new Movies("Warriors of Virtue", "family"));
-                flicks.Add(new Movies("Cats Don't Dance", "animated"));
-                flicks.Add(new Movies("The Incredibles", "animated"));
+                List<Movie> flicks = new List<Movie>();
+                flicks.Add(new Movie("Silent Hill", "horror"));
+                flicks.Add(new Movie("Hellraiser", "horror"));
+                flicks.Add(new Movie("All About the Benjamins", "comedy"));
+                flicks.Add(new Movie("Money Talks", "comedy"));
+                flicks.Add(new Movie("True Lies", "action"));
+                flicks.Add(new Movie("The Mummy", "action"));
+                flicks.Add(new Movie("Homeward Bound", "family"));
+                flicks.Add(new Movie("Warriors of Virtue", "family"));
+                flicks.Add(new Movie("Cats Don't Dance", "animated"));
+                flicks.Add(new Movie("The Incredibles", "animated"));
 
                 string genre = GetString("What genre might interest ya?").ToLower();
 
-                List<Movies> films = new List<Movies>();
-
-                var value = flicks.Find(genre => genre.Equals(genre));
-
-                Console.WriteLine(value);
+                List<Movie> films = flicks.FindAll(movie => movie.MovieCategory1==genre);
 
                 foreach (var film in films)
                 {
